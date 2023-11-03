@@ -1,0 +1,110 @@
+MDScreen:
+    name: 'Admin_Command-screen'
+    MDFloatLayout:
+        MDBoxLayout:
+            orientation:'vertical'
+            MDBoxLayout:
+                size_hint_y:.5
+
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Adminhome"
+
+        MDLabel:
+            text: "ADMIN COMMAND"
+            font_name: "fonts/Poppins.otf"
+            font_size: "18sp"
+            halign: "center"
+            pos_hint: {"center_y": .95}
+            color: rgba(24, 34, 34, 255)
+
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.75}
+
+    MDFloatLayout:
+        MDLabel:
+            text: "New Command"
+            font_name: "fonts/OpenSans-Bold.ttf"
+            font_size: "14sp"
+            pos_hint: {"center_x": .55, "center_y": .57}
+            color: rgba(24, 34, 34, 255)
+    MDFloatLayout:
+        size_hint_y: .10
+        pos_hint: {'center_x': .5,'center_y': .5}
+        MDFloatLayout:
+            size_hint: .9, .65
+            pos_hint: {'center_x': .5,'center_y': .5}
+            canvas:
+                Color:
+                    rgb: (238/255, 238/255, 238/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [23, 23, 23, 23]
+            TextInput:
+                id: command
+                hint_text : "New Command . . ."
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                font_size: "12sp"
+                font_name: "fonts/PoppinsEL.otf"
+                height: self.minimum_height
+                multiline: False
+                cursor_width: "2sp"
+                background_color: 0,0,0,0
+                padding: 15
+
+    MDFloatLayout:
+        MDLabel:
+            text: "New Response"
+            font_name: "fonts/OpenSans-Bold.ttf"
+            font_size: "14sp"
+            pos_hint: {"center_x": .55, "center_y": .37}
+            color: rgba(24, 34, 34, 255)
+    MDFloatLayout:
+        size_hint_y: .10
+        pos_hint: {'center_x': .5,'center_y': .3}
+        MDFloatLayout:
+            size_hint: .9, .65
+            pos_hint: {'center_x': .5,'center_y': .5}
+            canvas:
+                Color:
+                    rgb: (238/255, 238/255, 238/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [23, 23, 23, 23]
+            TextInput:
+                id: new_response
+                hint_text : "New Response . . ."
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                font_size: "12sp"
+                font_name: "fonts/PoppinsEL.otf"
+                height: self.minimum_height
+                multiline: False
+                cursor_color: 0, 0/255, 0/255, 1
+                cursor_width: "2sp"
+                background_color: 0,0,0,0
+                padding: 15
+
+    Button:
+        text: "Update"
+        size_hint: .4, .06
+        pos_hint: {"center_x": .75, "center_y": .20}
+        background_color: 0, 0, 0, 0
+        font_name: "fonts/PoppinsEL.otf"
+        on_release:
+            app.add_new_response(command.text, new_response.text)
+        canvas.before:
+            Color:
+                rgb: rgba(255, 0, 0, 255)
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]

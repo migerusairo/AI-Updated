@@ -1,0 +1,162 @@
+MDScreen:
+    name: "Register"
+    MDFloatLayout:
+        MDBoxLayout:
+            orientation:'vertical'
+            MDBoxLayout:
+                size_hint_y:.35
+            MDBoxLayout:
+                size_hint_y:.8
+                md_bg_color:1, 0, 0, 1
+                radius: [20]
+                opacity: 0.2
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Introduction1"
+
+        MDLabel:
+            text: "W E L C O M E ! , "
+            font_name: "fonts/Poppins.otf"
+            font_size: "30sp"
+            pos_hint: {"center_x": .6, "center_y": .85}
+            color: rgba(24, 34, 34, 255)
+
+        MDLabel:
+            text: "T C U n i s t a . "
+            font_name: "fonts/Poppins.otf"
+            font_size: "20sp"
+            pos_hint: {"center_x": .6, "center_y": .79}
+            color: rgba(255, 0, 0, 255)
+
+        MDLabel:
+            text: "Create New Account."
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "14sp"
+            pos_hint: {"center_x": .6, "center_y": .75}
+            color: rgba(135, 135, 135, 255)
+
+        MDFloatLayout:
+            Image:
+                source: "assets/TCUlogo.jpg"
+                size_hint: 1.5, 1.5
+                pos_hint: {'center_x': 0.5,'center_y': 0}
+                opacity: 0.5
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .65}
+            TextInput:
+                id: stud_id
+                hint_text: "Student ID"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .55}
+            TextInput:
+                id: name
+                hint_text: "Name"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .45}
+            TextInput:
+                id:yr_course
+                hint_text: "Year & Course"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .35}
+            TextInput:
+                id: section
+                hint_text: "Section"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .25}
+            TextInput:
+                id: password
+                hint_text: "Desired Password"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        Button:
+            text: "Register"
+            size_hint: .5, .06
+            pos_hint: {"center_x": .5, "center_y": .10}
+            background_color: 0, 0, 0, 0
+            font_name: "fonts/PoppinsEL.otf"
+            on_release:
+                app.register(name.text, stud_id.text, yr_course.text, section.text, password.text)
+            canvas.before:
+                Color:
+                    rgb: rgba(1, 0, 0, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]

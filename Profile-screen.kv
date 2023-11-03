@@ -1,0 +1,116 @@
+MDScreen:
+    name:'Profile-screen'
+    MDFloatLayout:
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Home-screen"
+
+        MDTextButton:
+            text: "Back"
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "15sp"
+            pos_hint: {"center_x": .15, "center_y": .95}
+            color: rgba(24, 34, 34, 255)
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Home-screen"
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.4, 0.4
+            pos_hint: {'center_x': 0.5,'center_y': 0.80}
+
+        MDBoxLayout:
+            orientation:'vertical'
+            MDBoxLayout:
+                size_hint_y:.5
+
+                MDFloatLayout:
+
+                    MDLabel:
+                        text: "User Profile"
+                        font_name: "fonts/Poppins.otf"
+                        font_size: "18sp"
+                        halign: "center"
+                        pos_hint: {"center_y": .95}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDLabel:
+                        text: "Name"
+                        font_name: "fonts/OpenSans-Bold.ttf"
+                        font_size: "13sp"
+                        pos_hint: {"center_x": .55,"center_y": .65}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDIcon:
+                        icon: "icons/profile.png"
+                        pos_hint: {"center_x": .17,"center_y": .60}
+
+                    MDLabel:
+                        text: "Student ID"
+                        font_name: "fonts/OpenSans-Bold.ttf"
+                        font_size: "13sp"
+                        pos_hint: {"center_x": .55,"center_y": .52}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDIcon:
+                        icon: "icons/id.png"
+                        pos_hint: {"center_x": .17,"center_y": .47}
+
+                    MDLabel:
+                        text: "Year & Course"
+                        font_name: "fonts/OpenSans-Bold.ttf"
+                        font_size: "13sp"
+                        pos_hint: {"center_x": .55, "center_y": .39}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDIcon:
+                        icon: "icons/course.png"
+                        pos_hint: {"center_x": .17,"center_y": .34}
+
+                    MDLabel:
+                        text: "Section"
+                        font_name: "fonts/OpenSans-Bold.ttf"
+                        font_size: "13sp"
+                        pos_hint: {"center_x": .55, "center_y": .26}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDIcon:
+                        icon: "icons/section.png"
+                        pos_hint: {"center_x": .17,"center_y": .21}
+
+
+                    Button:
+                        text: "About us"
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .13}
+                        background_color: 0, 0, 0, 0
+                        font_name: "fonts/PoppinsEL.otf"
+                        on_release:
+                            root.manager.transition.direction = "left"
+                            root.manager.current = "About"
+                        canvas.before:
+                            Color:
+                                rgb: rgba(0, 0, 0, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10]
+
+                    Button:
+                        text: "Logout"
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .06}
+                        background_color: 0, 0, 0, 0
+                        font_name: "fonts/PoppinsEL.otf"
+                        on_release:
+                            app.user_logout()
+                        canvas.before:
+                            Color:
+                                rgb: rgba(255, 0, 0, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10]

@@ -1,0 +1,43 @@
+MDScreen:
+    user_list: user_list
+    name: 'Adminhome'
+    MDFloatLayout:
+        MDIcon:
+            icon: "assets/TCUlogo.jpg"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.95}
+        MDLabel:
+            text: "Users"
+            font_name: "fonts/OpenSans-Bold.ttf"
+            pos_hint: {'center_x': .65, 'center_y': 0.95}
+            font_size: "18sp"
+
+    MDIconButton:
+        icon: "icons/logout.png"
+        pos_hint: {'center_x': 0.9, 'center_y': 0.95}
+        on_release:
+            app.admin_logout()
+            root.manager.transition.direction = "right"
+
+    ScrollView:
+        size_hint_y: .9
+        do_scroll_x: True
+        do_scroll_y: True
+
+        MDBoxLayout:
+            id : user_list
+            orientation: 'vertical'
+            size: (root.width, root.height)
+            width: self.minimum_width
+            size_hint: None, None
+            spacing : 10
+            cols: 1
+
+    MDFloatLayout:
+        MDIconButton:
+            icon: "icons/command.png"
+            pos_hint: {"center_x": .87,'center_y': 0.07}
+            theme_text_color: "Custom"
+            md_bg_color: 255/255, 200/255, 70/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Admin_Command-screen"

@@ -1,0 +1,58 @@
+MDScreen:
+    name: "Introduction1"
+    MDFloatLayout:
+        md_bg_color: 0/255, 0/255, 0/255, 0
+        MDIconButton:
+            icon: "icons/setting.png"
+            pos_hint: {'center_x': 0.9, 'center_y': 0.95}
+            opacity : 0.5
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Admin_login"
+
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.75}
+
+        MDLabel:
+            text: "Artificial Intelligence"
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "10sp"
+            pos_hint: {"center_y": .6}
+            halign: "center"
+            color: rgba(24, 34, 34, 255)
+
+        Button:
+            text: "Login"
+            size_hint: .5, .06
+            pos_hint: {"center_x": .5, "center_y": .18}
+            background_color: 0, 0, 0, 0
+            font_name: "fonts/PoppinsEL.otf"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Login"
+            canvas.before:
+                Color:
+                    rgb: rgba(255, 0, 0, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [20]
+
+        Button:
+            text: "Register"
+            size_hint: .5, .06
+            pos_hint: {"center_x": .5, "center_y": .10}
+            background_color: 0, 0, 0, 0
+            font_name: "fonts/PoppinsEL.otf"
+            color: rgba(0, 0, 0, 255)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Register"
+            canvas.before:
+                Color:
+                    rgb: rgba(0, 0, 0, 255)
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x, self.y, self.width, self.height, 20, 20, 20, 20, 100,

@@ -1,0 +1,88 @@
+MDScreen:
+    name: "Admin_login"
+    MDFloatLayout:
+        md_bg_color: 0/255, 0/255, 0/255, 0
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Introduction1"
+
+        MDLabel:
+            text: "A D M I N "
+            font_name: "fonts/Poppins.otf"
+            font_size: "30sp"
+            pos_hint: {"center_x": .6, "center_y": .85}
+            color: rgba(24, 34, 34, 255)
+
+        MDLabel:
+            text: "Sign in your account ."
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "14sp"
+            pos_hint: {"center_x": .6, "center_y": .79}
+            color: rgba(135, 135, 135, 255)
+
+        MDFloatLayout:
+            md_bg_color: 0/255, 0/255, 0/255, 0
+            Image:
+                source: "assets/TCUlogo.jpg"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .35}
+            TextInput:
+                id: admin_id
+                hint_text: "Admin"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .75
+                pos_hint: {'center_x': .43,'center_y': 0.25}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5, "center_y": .25}
+            TextInput:
+                id: admin_password
+                hint_text: "Password"
+                font_name: "fonts/PoppinsEL.otf"
+                size_hint_y: .90
+                pos_hint: {'center_x': .43,'center_y': 0.15}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 178/255, 178/255, 178/255, 255/255
+
+        Button:
+            text: "Login"
+            size_hint: .5, .06
+            pos_hint: {"center_x": .5, "center_y": .15}
+            background_color: 0, 0, 0, 0
+            font_name: "fonts/PoppinsEL.otf"
+            on_release:
+                app.admin_login(admin_id.text, admin_password.text)
+            canvas.before:
+                Color:
+                    rgb: rgba(255, 0, 0, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [20]

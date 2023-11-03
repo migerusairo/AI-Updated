@@ -1,0 +1,89 @@
+MDScreen:
+    name: "Home-screen"
+	MDFloatLayout:
+	    MDIcon:
+            icon: "assets/TCUlogo.jpg"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.95}
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.70}
+        MDIconButton:
+            icon: "icons/notification.png"
+            pos_hint: {"center_x": .9,'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Notification-screen"
+        MDLabel:
+            text: "H O M E"
+            font_name: "fonts/Poppins.otf"
+            font_size: "18sp"
+            pos_hint: {"center_x": .65, "center_y": .95}
+
+    MDBoxLayout:
+        Carousel:
+            id: carousel_1
+            size_hint: .5, .5
+            pos_hint: {"center_y": .35}
+            MDFloatLayout:
+                MDLabel:
+                    text: '"You don’t have to control your thoughts.\nYou just have to stop letting them control you." \n\n                                                         — Dan Millman'
+                    halign: "center"
+                    font_size: "12sp"
+                    font_name: "fonts/OpenSans-Italic.ttf"
+                    color: rgba(135, 135, 135, 255)
+            MDFloatLayout:
+                MDLabel:
+                    text: '"Mental health problems don’t define who you are.\nThey are something you experience.\nYou walk in the rain and you feel the rain,\n but you are not the rain." \n\n                                                       — Matt Haig'
+                    halign: "center"
+                    font_size: "12sp"
+                    font_name: "fonts/OpenSans-Italic.ttf"
+                    color: rgba(135, 135, 135, 255)
+            MDFloatLayout:
+                MDLabel:
+                    text: '"Slow, deep breathing is important…\nIt’s like an anchor in the midst of an emotional storm:\nthe anchor won’t get rid of the storm,\nbut it will hold you steady until it passes."\n\n                                                    — Russ Harris'
+                    font_name: "fonts/OpenSans-Italic.ttf"
+                    halign: "center"
+                    font_size: "12sp"
+                    color: rgba(135, 135, 135, 255)
+            MDFloatLayout:
+                MDLabel:
+                    text: '“There is a crack in everything,\nthat’s how the light gets in” \n\n                           ― Leonard Cohen'
+                    font_name: "fonts/OpenSans-Italic.ttf"
+                    halign: "center"
+                    font_size: "12sp"
+                    color: rgba(135, 135, 135, 255)
+            MDFloatLayout:
+                MDLabel:
+                    text:'“If you can’t fly, run. If you can’t run, walk.\n If you can’t walk, crawl, but by all means,\n keep moving.” \n\n                                — Martin Luther King, Jr.'
+                    font_name: "fonts/OpenSans-Italic.ttf"
+                    halign: "center"
+                    font_size: "12sp"
+                    color: rgba(135, 135, 135, 255)
+    MDBoxLayout:
+        Carousel:
+            id: carousel_2
+            size_hint: .5, .15
+            pos_hint: {"center_y": .15}
+            MDFloatLayout:
+                MDLabel:
+                    md_bg_color: 0,0,0,0
+            MDFloatLayout:
+
+                MDIconButton:
+                    icon: "icons/message.png"
+                    pos_hint: {"center_x": .67,'center_y': 0.5}
+                    theme_text_color: "Custom"
+                    md_bg_color: 255/255, 200/255, 70/255, 1
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "Message-screen"
+
+                MDIconButton:
+                    icon: "icons/profile.png"
+                    pos_hint: {"center_x": .87,'center_y': 0.5}
+                    theme_text_color: "Custom"
+                    md_bg_color: 255/255, 200/255, 70/255, 1
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "Profile-screen"
