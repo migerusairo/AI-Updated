@@ -412,7 +412,7 @@ class TCUAdvisor(MDApp):
         pass
 
     def on_start(self):
-        Clock.schedule_once(self.start, 0)
+        Clock.schedule_once(self.start, 3)
 
     def carousel_autonext(self):
         screen = self.root.get_screen('Welcome-screen')
@@ -426,7 +426,7 @@ class TCUAdvisor(MDApp):
         Clock.schedule_interval(carousel_1.load_next, 4)
 
     def start(self, *args):
-        self.root.current = "Home-screen"
+        self.root.current = "Introduction1"
         self.carousel_autonext()
         self.display_all_user()
 
